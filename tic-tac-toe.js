@@ -1,7 +1,7 @@
 const area = document.getElementById("area");
 let move = 0;
 let winnerIs = "";
-
+let boxValue = document.getElementsByClassName("box");
 area.addEventListener("click", (e) => {
     if (e.target.innerHTML){
         return;
@@ -24,7 +24,7 @@ const check = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  const boxValue = document.getElementsByClassName("box");
+  
   for (i = 0; i < winStateValues.length; i++) {
     if (
       boxValue[winStateValues[i][0]].innerHTML == "X" &&
@@ -41,10 +41,14 @@ const check = () => {
     }
   }
   console.log(winnerIs);
+
 };
 
 let restart = document.getElementById("restart");
 
 restart.addEventListener("click", () => {
-  boxValue = "";
-});
+  for (let i = 0; i < boxValue.length;i++){
+  boxValue[i].innerHTML = "";
+  }
+  })
+  

@@ -3,6 +3,9 @@ let move = 0;
 let winnerIs = "";
 
 area.addEventListener("click", (e) => {
+    if (e.target.innerHTML){
+        return;
+    }
   if ((e.target.className = "box")) {
     move % 2 === 0 ? (e.target.innerHTML = "X") : (e.target.innerHTML = "O");
     move++;

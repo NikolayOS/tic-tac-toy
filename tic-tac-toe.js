@@ -38,10 +38,47 @@ const check = () => {
     }
   }
   console.log(winnerIs);
+<<<<<<< Updated upstream
+=======
+  resaltCalc();
+
+>>>>>>> Stashed changes
 };
+let x = 0;
+let o = 0;
+function resaltCalc(){
+  let Xplayer = document.getElementById("Xplayer");
+  let Oplayer = document.getElementById("Oplayer");
+ 
+if (winnerIs == "Player X"){
+  x++;
+  Xplayer.innerHTML = "Player_X : " + x;
+ }
+ else if (winnerIs == "Player O"){
+   o++;
+   Oplayer.innerHTML = "Player_O : " + o;
+   }
+  };
 
 let restart = document.getElementById("restart");
 
 restart.addEventListener("click", () => {
+<<<<<<< Updated upstream
   boxValue = "";
 });
+=======
+  for (let i = 0; i < boxValue.length;i++){
+  boxValue[i].innerHTML = "";
+  }
+  winnerIs = "";
+  });
+  
+  let newGame = document.getElementById("newGame");
+
+  newGame.addEventListener("click", () => {
+    x = 0;
+    o = 0;
+    Xplayer.innerHTML = "Player_X : " + 0;
+    Oplayer.innerHTML = "Player_O : " + 0;
+  });
+>>>>>>> Stashed changes

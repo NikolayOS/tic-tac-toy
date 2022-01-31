@@ -5,20 +5,20 @@ let boxValue = document.getElementsByClassName("box");
 area.addEventListener("click", (e) => {
   if (!checkValidClick(e)) {
     return;
-  };
+  }
 
   if ((e.target.className = "box")) {
     move % 2 === 0 ? (e.target.innerHTML = "X") : (e.target.innerHTML = "O");
     move++;
   }
-  
+
   check();
 });
 
 function checkValidClick(e) {
-let result = e.target.innerHTML ?  false : true;
-    return result;
-};
+  let result = e.target.innerHTML ? false : true;
+  return result;
+}
 
 const check = () => {
   const winStateValues = [
@@ -31,7 +31,7 @@ const check = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  
+
   for (i = 0; i < winStateValues.length; i++) {
     if (
       boxValue[winStateValues[i][0]].innerHTML == "X" &&
@@ -48,14 +48,12 @@ const check = () => {
     }
   }
   console.log(winnerIs);
-
 };
 
 let restart = document.getElementById("restart");
 
 restart.addEventListener("click", () => {
-  for (let i = 0; i < boxValue.length;i++){
-  boxValue[i].innerHTML = "";
+  for (let i = 0; i < boxValue.length; i++) {
+    boxValue[i].innerHTML = "";
   }
-  })
-  
+});

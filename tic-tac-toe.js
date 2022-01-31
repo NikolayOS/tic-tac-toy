@@ -1,14 +1,24 @@
 const area = document.getElementById("area");
 let move = 0;
 let winnerIs = "";
-
+let boxValue = document.getElementsByClassName("box");
 area.addEventListener("click", (e) => {
+  if (!checkValidClick(e)) {
+    return;
+  }
+
   if ((e.target.className = "box")) {
     move % 2 === 0 ? (e.target.innerHTML = "X") : (e.target.innerHTML = "O");
     move++;
   }
+
   check();
 });
+
+function checkValidClick(e) {
+  let result = e.target.innerHTML ? false : true;
+  return result;
+}
 
 const check = () => {
   const winStateValues = [
@@ -21,7 +31,7 @@ const check = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  const boxValue = document.getElementsByClassName("box");
+
   for (i = 0; i < winStateValues.length; i++) {
     if (
       boxValue[winStateValues[i][0]].innerHTML == "X" &&
@@ -38,11 +48,8 @@ const check = () => {
     }
   }
   console.log(winnerIs);
-<<<<<<< Updated upstream
-=======
   resaltCalc();
 
->>>>>>> Stashed changes
 };
 let x = 0;
 let o = 0;
@@ -63,10 +70,8 @@ if (winnerIs == "Player X"){
 let restart = document.getElementById("restart");
 
 restart.addEventListener("click", () => {
-<<<<<<< Updated upstream
   boxValue = "";
-});
-=======
+
   for (let i = 0; i < boxValue.length;i++){
   boxValue[i].innerHTML = "";
   }
@@ -81,4 +86,4 @@ restart.addEventListener("click", () => {
     Xplayer.innerHTML = "Player_X : " + 0;
     Oplayer.innerHTML = "Player_O : " + 0;
   });
->>>>>>> Stashed changes
+

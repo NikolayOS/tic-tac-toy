@@ -3,15 +3,22 @@ let move = 0;
 let winnerIs = "";
 let boxValue = document.getElementsByClassName("box");
 area.addEventListener("click", (e) => {
-    if (e.target.innerHTML){
-        return;
-    }
+  if (!checkValidClick(e)) {
+    return;
+  };
+
   if ((e.target.className = "box")) {
     move % 2 === 0 ? (e.target.innerHTML = "X") : (e.target.innerHTML = "O");
     move++;
   }
+  
   check();
 });
+
+function checkValidClick(e) {
+let result = e.target.innerHTML ?  false : true;
+    return result;
+};
 
 const check = () => {
   const winStateValues = [
